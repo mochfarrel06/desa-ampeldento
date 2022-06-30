@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Statistik</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/logo-kabupaten.png" rel="icon" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style type="text/css">
+      #chart12 {
+        width: 700px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center">
+        <div class="logo me-auto">
+          <img src="assets/img/logo-kabupaten.png" alt="" width="30" height="40" class="d-inline-block align-text-top" />
+          <a href="index.html" class="fs-5 text-light">Desa Ampeldento</a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li class="dropdown">
+              <a href="profil-desa.html">Desa <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="sejarah.html">Sejarah</a></li>
+                <li><a href="geografis.html">Geografis</a></li>
+                <li><a href="potensi.html">Potensi</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#"><span>Pemerintahan</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="pemerintahan-desa.html">Pemerintahan Desa</a></li>
+                <li><a href="bpd.html">BPD</a></li>
+                <li><a href="lpmd.html">LPMD</a></li>
+              </ul>
+            </li>
+            <li><a href="statistik.html">Statistik</a></li>
+            <li class="dropdown">
+              <a href="#">Layanan <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="administrasi.html">Administrasi</a></li>
+                <li><a href="informasi.html">Informasi</a></li>
+              </ul>
+            </li>
+            <li><a href="produk-hukum.html">Produk Hukum</a></li>
+            <li><a href="berita.html">Kabar Terkini</a></li>
+            <li><a href="galeri.html">Potret Desa</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <section id="hero">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <!-- Slide 1 -->
+          <div class="carousel-item active" style="background-image: url(assets/img/slide/4.jpeg); background-position: center">
+            <div class="carousel-container">
+              <div class="container">
+                <h2 class="animate__animated animate__fadeInDown fs-1 text-light">Statistik</h2>
+                <p class="animate__animated animate__fadeInDown fs-5 text-light">Sistem Kami memungkinkan dalam melakukan pendataan secara tepat, akurat dan akuntabel. Diolah oleh tim pendata Desa Kami</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-3">
+      <div aria-label="breadcrumb" class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="breadcrumbs/visi.html" class="text-warning">Visi Misi</a></li>
+          <li class="breadcrumb-item"><a href="breadcrumbs/kebijakan.html" class="text-warning">Arah Kebijakan</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <main id="main" class="py-5">
+      <section id="statistik" class="statistik">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <div class="statistik-title mt-5">
+                <h2 class="fw-bold fs-3">Data Kependudukan</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row py-5">
+            <div class="col-md-12 col-lg-6 mb-5">
+              <canvas id="pieChart"></canvas>
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+          <div class="row py-5">
+            <div class="col-md-12 col-lg-6 mb-5">
+              <h2 class="fw-bold mb-5 fs-3">Data Agama</h2>
+              <canvas id="pieChart2"></canvas>
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <h2 class="fw-bold mb-5 fs-3">Data Lulusan</h2>
+              <canvas id="myChart2"></canvas>
+            </div>
+          </div>
+          <div class="row py-5">
+            <div class="col-lg-8">
+              <h2 class="fw-bold mb-5 fs-3">Data Mata Pencaharian</h2>
+              <canvas id="chart12" width="100" height="100"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="footer-info">
+                <h3>Desa Ampeldento</h3>
+                <div class="people d-flex align-items-center">
+                  <i class="bi bi-person-circle fs-5"></i>
+                  <a class="ms-2">Dery Dwi Andika</a>
+                </div>
+                <div class="sosmed-ig mt-2 d-flex align-items-center">
+                  <i class="bi bi-instagram fs-5"></i>
+                  <a class="ms-2" href="https://www.instagram.com/desa.ampeldentopakis/" target="_blank">@desaampeldento.pakis</a>
+                </div>
+                <div class="sosmed-fb mt-2 d-flex align-items-center">
+                  <i class="bi bi-facebook fs-5"></i>
+                  <a class="ms-2" href="https://www.facebook.com/profile.php?id=100082757853762" target="_blank">Desa Ampeldento</a>
+                </div>
+                <div class="sosmed-wa mt-2 d-flex align-items-center">
+                  <i class="bi bi-whatsapp fs-5"></i>
+                  <a class="ms-2" href="https://wa.me/6285904304357" target="_blank">085 904 304 357</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Information</h4>
+              <p>Pengelola Website Layanan Desa yang berkantor di Kantor Desa Ampeldento</p>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profil-desa.html">Desa</a></li>
+                <li><a href="statistik.html">Data</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Alamat</h4>
+              <p>
+                Kantor Desa Ampeldento, <br />
+                Jl. Raya Ampeldento no. 14 <br />
+                Kecamatan Pakis Kabupaten Malang, 65154
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>desaampeldento</span></strong
+          >. All Rights Reserved 2022
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="https://wa.me/6285904304357" target="_blank" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-whatsapp"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/chart.js/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Pie Chart
+      var ctx = document.getElementById('pieChart').getContext('2d');
+      var piechart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+          // label nama setiap Value
+          labels: ['Laki - Laki', 'Perempuan'],
+          datasets: [
+            {
+              // Jumlah Value yang ditampilkan
+              data: [3157, 3012],
+
+              backgroundColor: ['rgba(111, 80, 10, 0.5)', 'rgba(24, 220, 110, 0.5)'],
+            },
+          ],
+        },
+      });
+      // End Pie Chart
+
+      // Bar Chart umur
+      var barChartData = {
+        labels: ['00-04 Tahun', '05-09 Tahun', '10-14 Tahun', '15-19 Tahun', '20-24 Tahun', '25-29 Tahun', '30-34 Tahun', '35-39 Tahun', '40-44 Tahun', '45-49 Tahun', '50-54 Tahun', '55-59 Tahun', '60-64 Tahun', '65 Tahun Lebih'],
+
+        datasets: [
+          {
+            label: 'Laki - Laki',
+            backgroundColor: 'pink',
+            borderColor: 'red',
+            borderWidth: 1,
+            data: [169, 251, 258, 277, 250, 231, 249, 298, 262, 243, 200, 208, 142, 235],
+          },
+          {
+            label: 'Perempuan',
+            backgroundColor: 'lightblue',
+            borderColor: 'blue',
+            borderWidth: 1,
+            data: [231, 295, 257, 286, 249, 235, 264, 289, 239, 235, 211, 151, 138, 257],
+          },
+        ],
+      };
+
+      var chartOptions = {
+        responsive: true,
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Penduduk Desa Ampeldento Menurut Umur Tahun 2019',
+        },
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      };
+
+      var ctx2 = document.getElementById('myChart').getContext('2d');
+      window.myBar = new Chart(ctx2, {
+        type: 'bar',
+        data: barChartData,
+        options: chartOptions,
+      });
+      // End Bar chart
+
+      // Pie chart agama
+      var ctx3 = document.getElementById('pieChart2').getContext('2d');
+      var piechart = new Chart(ctx3, {
+        type: 'pie',
+        data: {
+          // label nama setiap Value
+          labels: ['Islam', 'Kristen'],
+          datasets: [
+            {
+              // Jumlah Value yang ditampilkan
+              data: [6016, 54],
+
+              backgroundColor: ['rgba(111, 80, 10, 0.5)', 'rgba(24, 220, 110, 0.5)'],
+            },
+          ],
+        },
+      });
+      // End
+
+      // Lulusan
+      var barChartData = {
+        labels: ['DIPLOMA IV/STRATA 1', 'AKADEMI/DIPLOMA III/S. MUDA', 'DIPLOMA I/II', 'SLTA/SEDERAJAT', 'SLTP/SEDERAJAT', 'TAMAT SD/SEDERAJAT', 'BELUM TAMAT SD/SEDERAJAT', 'TIDAK/BELUM SEKOLAH'],
+
+        datasets: [
+          {
+            axis: 'y',
+            label: 'Lulusan',
+            data: [167, 51, 18, 1087, 1001, 2031, 649, 1064],
+            fill: false,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(255, 99, 132, 0.2)',
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      var ctx4 = document.getElementById('myChart2').getContext('2d');
+      window.myBar = new Chart(ctx4, {
+        type: 'bar',
+        data: barChartData,
+        options: {
+          indexAxis: 'y',
+        },
+      });
+
+      // Pekerjaan
+      var barChartData = {
+        labels: [
+          'Belum/Tidak Bekerja',
+          'Mengurus Rumah Tangga',
+          'Pelajar/Mahasiswa',
+          'Pensiunan',
+          'Tentara Nasional Indonesia',
+          'Perdagangan',
+          'Petani/Pekebun',
+          'Peternak',
+          'Karyawan Swasta',
+          'Karyawan BUMN',
+          'Karyawan Honorer',
+          'Buruh Harian Lepas',
+          'Buruh Peternakan',
+          'Pembantu Rumah Tangga',
+          'Tukang Cukur',
+          'Tukang Batu',
+          'Tukang Kayu',
+          'Tukang Jahit',
+          'Mekanik',
+          'Pedagang',
+          'Perangkat Desa',
+          'Kepala Desa',
+          'Sopir',
+          'Wiraswasta',
+        ],
+
+        datasets: [
+          {
+            axis: 'y',
+            label: 'Data Mata Pencaharian',
+            data: [1156, 1298, 1088, 13, 12, 11, 96, 1, 1235, 4, 3, 356, 2, 4, 1, 134, 22, 5, 1, 36, 10, 1, 21, 260],
+            fill: false,
+            backgroundColor: [
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      var ctx4 = document.getElementById('chart12').getContext('2d');
+      window.myBar = new Chart(ctx4, {
+        type: 'bar',
+        data: barChartData,
+        options: {
+          indexAxis: 'y',
+        },
+      });
+    </script>
+  </body>
+</html>
